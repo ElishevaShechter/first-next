@@ -47,3 +47,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #433e3e;
+  border-bottom: 1px solid var(--foreground);
+}
