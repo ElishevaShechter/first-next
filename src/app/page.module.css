@@ -1,4 +1,4 @@
-.page {
+/* .page {
   --background: #fafafa;
   --foreground: #fff;
 
@@ -92,10 +92,10 @@ a.primary {
 
 a.secondary {
   border-color: var(--button-secondary-border);
-}
+} */
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
@@ -105,9 +105,9 @@ a.secondary {
     background: var(--button-secondary-hover);
     border-color: transparent;
   }
-}
+} */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .main {
     padding: 48px 24px;
   }
@@ -121,7 +121,9 @@ a.secondary {
     line-height: 40px;
     letter-spacing: -1.92px;
   }
-}
+} */
+/* 
+
 
 @media (prefers-color-scheme: dark) {
   .logo {
@@ -139,4 +141,126 @@ a.secondary {
     --button-secondary-hover: #1a1a1a;
     --button-secondary-border: #1a1a1a;
   }
+} */
+
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  overflow: hidden;
+  padding: 2rem;
+  direction: rtl;
+}
+
+/* לוגו רקע ענק */
+.backgroundLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: auto;
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+}
+
+
+/* אזור מרכזי */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* כפתורים */
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  background: white;
+  color: #3b82f6;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  background: #facc15;
+  color: #1e3a8a;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  color: white;
+  animation: fadeUp 1s ease forwards;
+}
+
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  animation: fadeUp 1.4s ease forwards;
+}
+/* אלמנטים מרחפים */
+.floatingElements {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floatingElements span {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* מיקומים שונים */
+.star:nth-child(1) { top: 10%; left: 15%; animation-duration: 7s; }
+.star:nth-child(2) { top: 70%; left: 80%; animation-duration: 9s; }
+.controller { top: 40%; left: 5%; animation-duration: 8s; }
+.block { top: 20%; left: 70%; animation-duration: 10s; }
+.ball { top: 85%; left: 30%; animation-duration: 6s; }
+
+/* אנימציית ריחוף */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(8deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }

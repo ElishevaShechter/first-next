@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 import Image from "next/image";
-import styles from "./Navbar.module.css";
+import styles from "./navbar.module.css";
 
 export default function Navbar() {
     return (
