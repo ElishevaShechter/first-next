@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -25,7 +26,7 @@ export default function Home() {
           <a href="/popular" className={styles.btn}>⭐ פופולרים</a>
           <a href="/sale" className={styles.btn}>🔥 מבצעים</a>
         </div>
-        
+
       </section>
       <div className={styles.floatingElements}>
         <span className={styles.star}>⭐</span>
