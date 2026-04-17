@@ -4,46 +4,33 @@ import { useState } from 'react';
 
 
 
+import Image from "next/image";
+import styles from "./Navbar.module.css";
 
-export default function NavBar() {
-    const [isOpen, setIsOpen] = useState(false);
-
+export default function Navbar() {
     return (
-        <div className="navbar" >
-        <nav className="bg-blue-600 text-white">
-            <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
-                    <Link href="/" className="text-xl font-bold">
-                        Logo
-                    </Link>
-
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden"
-                    >
-                        ☰
-                    </button>
-
-                    <ul className={`${isOpen ? 'block' : 'hidden'} md:flex gap-6`}>
-                        <li>
-                            <Link href="/" className="hover:text-gray-200">
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/about" className="hover:text-gray-200">
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/contact" className="hover:text-gray-200">
-                                Contact
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+        <header className={styles.navbar}>
+            <div className={styles.logo}>
+                <Link href="/">
+                    <Image
+                        src="/Copilot_20260417_102723.png"
+                        alt="TOYS Logo"
+                        width={120}
+                        height={60}
+                        priority
+                    />
+                </Link>
             </div>
-        </nav>
-        </div>
+
+            <nav className={styles.links}>
+                <Link href="/">בית</Link>
+                <Link href="/games">משחקים</Link>
+                <Link href="/cart">עגלה</Link>
+                <Link href="/contact" className={styles.cta}>
+                    צרו קשר
+                </Link>
+            </nav>
+        </header>
     );
 }
+
